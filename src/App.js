@@ -45,7 +45,7 @@ const RandomColorGenerator = () => {
             backgroundColor: 'peachpuff',
             borderRadius: '8px',
             borderColor: 'sienna',
-            //border: 'none',
+            // border: 'none',
           }}
           onClick={randomHexColor}
         >
