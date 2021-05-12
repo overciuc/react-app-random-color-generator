@@ -14,14 +14,17 @@ const buttonStyle = css`
   background-color: #f3e3f1;
 `;
 
+// Function for custom color change (includes hue input, light input, and submit button)
 function CustomColorChange(props) {
   const [customHue, setCustomHue] = useState('');
   const [customLight, setCustomLight] = useState('');
 
+  // What to do when something was typed into the field for hue
   function onChangeCustomHue(event) {
     setCustomHue(event.currentTarget.value);
   }
 
+  // What to do when something was typed into the field for light
   function onChangeCustomLight(event) {
     setCustomLight(event.currentTarget.value);
   }
@@ -29,6 +32,8 @@ function CustomColorChange(props) {
   return (
     <div>
       <h6>Please enter a color name and lightness.</h6>
+
+      {/* Input field to get hue */}
       <div>
         <input
           htmlFor="customHue"
@@ -41,6 +46,7 @@ function CustomColorChange(props) {
         />
       </div>
 
+      {/* Input field to get luminosity */}
       <div>
         <input
           htmlFor="customLight"
@@ -53,9 +59,11 @@ function CustomColorChange(props) {
         />
       </div>
 
+      {/* Submit button */}
       <div>
         <button
           css={buttonStyle}
+          /* After the submit button is pressed transfer the input color and light to the hex code on the main page */
           onClick={() => {
             const newColor = randomColor({
               luminosity: customLight,
@@ -108,6 +116,7 @@ const RandomColorGenerator = () => {
         {/* Show the title */}
         <h3>Random Color Generator</h3>
 
+        {/* Add the input fields after the Cutom color button is pressed */}
         {showInput && <CustomColorChange setHex={setHex} />}
 
         {/* Show the color code */}
@@ -123,6 +132,7 @@ const RandomColorGenerator = () => {
         {/* Custom color button */}
         <button
           css={buttonStyle}
+          /* When the button is pressed show the input fields */
           onClick={() => {
             setShowInput(true);
           }}
