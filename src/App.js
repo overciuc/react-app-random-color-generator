@@ -1,10 +1,8 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 /** @jsxImportSource @emotion/react */
 import './App.css';
 import { css } from '@emotion/react';
-import React, { useState } from 'react';
-
-const randomColor = require('randomcolor');
+import randomColor from 'randomcolor';
+import { useState } from 'react';
 
 // style the button
 const buttonStyle = css`
@@ -36,8 +34,6 @@ function CustomColorChange(props) {
       {/* Input field to get hue */}
       <div>
         <input
-          htmlFor="customHue"
-          text="customHue"
           type="text"
           id="customHue"
           placeholder="eg. red, blue"
@@ -49,8 +45,6 @@ function CustomColorChange(props) {
       {/* Input field to get luminosity */}
       <div>
         <input
-          htmlFor="customLight"
-          text="customLight"
           type="text"
           id="customLight"
           placeholder="eg. dark, light"
